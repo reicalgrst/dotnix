@@ -7,8 +7,10 @@
       # Fish shell init
       set fish_greeting ""
 
-      # Homebrew環境設定
+      # Homebrew設定
       eval "$(/opt/homebrew/bin/brew shellenv)"
+      # direnv設定
+      eval (direnv hook fish)
     '';
 
     shellAliases = {
