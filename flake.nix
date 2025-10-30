@@ -9,23 +9,29 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager }:
-  {
-    # Build darwin flake using:
-    # $ darwin-rebuild build --flake .#reicalgrst-MacBookAir
-    darwinConfigurations."reicalgrst-MacBookAir" = nix-darwin.lib.darwinSystem {
-      modules = [ 
-        ./configuration.nix
+  outputs =
+    inputs@{
+      self,
+      nix-darwin,
+      nixpkgs,
+      home-manager,
+    }:
+    {
+      # Build darwin flake using:
+      # $ darwin-rebuild build --flake .#reicalgrst-MacBookAir
+      darwinConfigurations."reicalgrst-MacBookAir" = nix-darwin.lib.darwinSystem {
+        modules = [
+          ./configuration.nix
 
-	home-manager.darwinModules.home-manager
-	{
-	  nixpkgs.config.allowUnfree = true;
+          home-manager.darwinModules.home-manager
+          {
+            nixpkgs.config.allowUnfree = true;
 
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.reicalgrst = import ./home.nix;
-	}
-      ];
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.reicalgrst = import ./home.nix;
+          }
+        ];
+      };
     };
-  };
 }

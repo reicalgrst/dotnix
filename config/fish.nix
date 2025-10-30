@@ -6,11 +6,11 @@
     shellInit = ''
       # Fish shell init
       set fish_greeting ""
-     
+
       # Homebrew環境設定
       eval "$(/opt/homebrew/bin/brew shellenv)"
     '';
-    
+
     shellAliases = {
       # git alias
       g = "git";

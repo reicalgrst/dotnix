@@ -6,7 +6,10 @@
   ];
 
   nix.settings = {
-    experimental-features = ["nix-command" "flakes"];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
   };
 
   nix.optimise.automatic = true;
@@ -15,7 +18,7 @@
     automatic = true;
     options = "--delete-older-than 30d";
   };
-  
+
   system.stateVersion = 6;
   system.primaryUser = "reicalgrst";
   nixpkgs.hostPlatform = "aarch64-darwin";

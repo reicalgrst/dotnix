@@ -1,9 +1,9 @@
-{ config, pkgs, ...}:
+{ config, pkgs, ... }:
 
 {
   homebrew = {
     enable = true;
-    
+
     onActivation = {
       autoUpdate = true;
       upgrade = true;
@@ -11,7 +11,7 @@
     };
 
     brews = [
-    
+
     ];
 
     casks = [
