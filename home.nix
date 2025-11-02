@@ -25,7 +25,7 @@
     ./config/fish.nix
     ./config/git.nix
     ./config/direnv.nix
-    ./config/zed.nix
+    ./config/zed/all.nix
     ./config/starship.nix
   ];
 
