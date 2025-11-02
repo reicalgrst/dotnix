@@ -22,6 +22,10 @@
 
       # eza alias
       ls = "eza --icons --git --time-style relative -al";
+
+      #clipboadr alias
+      clip = "pbcopy";
+      paste = "pbpaste";
     };
 
     interactiveShellInit = ''
