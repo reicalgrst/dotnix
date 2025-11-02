@@ -7,7 +7,6 @@
 
   home.packages = with pkgs; [
     # Essential Tools
-    git
     gh
 
     # For Better Experience
