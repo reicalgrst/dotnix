@@ -18,6 +18,8 @@
       "font-fira-code-nerd-font"
       "zed"
       "iterm2"
+      "zoom"
+      "obsidian"
     ];
   };
 }
