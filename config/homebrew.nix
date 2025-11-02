@@ -20,6 +20,7 @@
       "iterm2"
       "zoom"
       "obsidian"
+      "obs"
     ];
   };
 }
