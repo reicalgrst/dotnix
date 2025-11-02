@@ -23,7 +23,7 @@
       # eza alias
       ls = "eza --icons --git --time-style relative -al";
 
-      #clipboard alias
+      # clipboard alias
       clip = "pbcopy";
       paste = "pbpaste";
     };

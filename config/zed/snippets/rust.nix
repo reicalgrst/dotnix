@@ -34,5 +34,34 @@
       ];
       description = "Rolling hash implementation for string hashing";
     };
+
+    "Base Convert" = {
+      prefix = "base";
+      body = [
+        "fn base_x_to_base_y(mut N: String, X: u128, Y: u128) -> String {"
+        "    let mut n = 0;"
+        "    let mut i = 0;"
+        "    while let Some(c) = N.pop() {"
+        "        n += (c as u8 - b'0') as u128 * X.pow(i);"
+        "        i += 1;"
+        "    }"
+        ""
+        "    if n == 0 {"
+        "        return \"0\".to_string();"
+        "    }"
+        ""
+        "    let mut res = String::new();"
+        "    while 0 < n {"
+        "        let m = (n % Y) as u8 + b'0';"
+        "        res.push(m as char);"
+        "        n /= Y;"
+        "    }"
+        ""
+        "    let res = res.chars().rev().collect();"
+        "    res"
+        "}"
+      ];
+      description = "Base Conversion From Base X to Base Y";
+    };
   };
 }
