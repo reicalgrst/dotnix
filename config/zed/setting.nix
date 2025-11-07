@@ -20,13 +20,16 @@
           };
         };
       };
-    };
 
-    languages = {
-      Nix = {
-        language_servers = [ "nil" ];
-        format_on_save = "on";
-        formatter = "language_server";
+      tinymist = {
+        binary = {
+          path = "${pkgs.tinymist}/bin/tinymist";
+        };
+
+        settings = {
+          exportPdf = "onSave";
+          outputPath = "$root/$name";
+        };
       };
     };
 
