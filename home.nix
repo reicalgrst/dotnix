@@ -22,6 +22,9 @@
     # For Typst
     typst
     tinymist
+
+    # For Claude
+    claude-code
   ];
 
   imports = [
