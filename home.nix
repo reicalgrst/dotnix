@@ -18,6 +18,10 @@
     nixfmt-rfc-style
     nil
     nixd
+
+    # For Typst
+    typst
+    tinymist
   ];
 
   imports = [
