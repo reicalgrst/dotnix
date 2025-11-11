@@ -63,5 +63,52 @@
       ];
       description = "Base Conversion From Base X to Base Y";
     };
+
+    "Prime factorize and Divisor" = {
+      prefix = "pfs";
+      body = [
+        "trait Integer {"
+        "    fn divs(&self) -> Vec<usize>;"
+        "    fn pfs(&self) -> Vec<usize>;"
+        "}"
+        ""
+        "impl Integer for usize {"
+        "    fn divs(&self) -> Vec<usize> {"
+        "        let mut res = Vec::new();"
+        "        let n = *self;"
+        "        for i in (1..).take_while(|&x| x * x <= n) {"
+        "            if n % i == 0 {"
+        "                res.push(i);"
+        "                if i != n / i {"
+        "                    res.push(n / i);"
+        "                }"
+        "            }"
+        "        }"
+        "        res.sort_unstable();"
+        "        res"
+        "    }"
+        ""
+        "    fn pfs(&self) -> Vec<usize> {"
+        "        let mut res = Vec::new();"
+        "        let mut n = *self;"
+        "        for i in (2..).take_while(|&x| x * x <= *self) {"
+        "            if n % i == 0 {"
+        "                res.push(i);"
+        "                while n % i == 0 {"
+        "                    n /= i;"
+        "                }"
+        "            }"
+        "        }"
+        ""
+        "        if 1 < n {"
+        "            res.push(n);"
+        "        }"
+        ""
+        "        res"
+        "    }"
+        "}"
+      ];
+      description = "allow usize for getting its Prime factorize and Divisors";
+    };
   };
 }
