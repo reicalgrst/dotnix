@@ -25,6 +25,9 @@
 
     # For Claude
     claude-code
+
+    # For Zenn
+    zenn-cli
   ];
 
   imports = [
