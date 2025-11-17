@@ -21,6 +21,7 @@
       "zoom"
       "obsidian"
       "obs"
+      "steam"
     ];
   };
 }
