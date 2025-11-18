@@ -22,6 +22,7 @@
       "obsidian"
       "obs"
       "steam"
+      "visual-studio-code" 
     ];
   };
 }
