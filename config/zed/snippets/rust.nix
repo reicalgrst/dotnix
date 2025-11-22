@@ -110,5 +110,39 @@
       ];
       description = "allow usize for getting its Prime factorize and Divisors";
     };
+    "Modulo Combination" = {
+      prefix = "comb";
+      body = [
+        "struct Combination {"
+        "    fac: Vec<mint>,"
+        "    finv: Vec<mint>,"
+        "}"
+        ""
+        "impl Combination {"
+        "    fn new(N: usize) -> Self {"
+        "        let MOD = mint::modulus() as usize;"
+        "        let mut fac = vec![mint::new(1); N + 1];"
+        "        let mut finv = vec![mint::new(1); N + 1];"
+        "        let mut inv = vec![mint::new(1); N + 1];"
+        ""
+        "        for i in 2..=N {"
+        "            fac[i] = fac[i - 1] * i;"
+        "            inv[i] = mint::new(MOD) - inv[MOD % i] * (MOD / i);"
+        "            finv[i] = finv[i - 1] * inv[i];"
+        "        }"
+        "        Self { fac, finv }"
+        "    }"
+        ""
+        "    fn com(&self, N: usize, K: usize) -> mint {"
+        "        if N < K {"
+        "            mint::new(0)"
+        "        } else {"
+        "            self.fac[N] * self.finv[K] * self.finv[N - K]"
+        "        }"
+        "    }"
+        "}"
+      ];
+      description = "provoide modint combination for preprocess O(N) and calc O(1)";
+    };
   };
 }
