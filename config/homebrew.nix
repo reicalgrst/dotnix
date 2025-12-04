@@ -23,7 +23,8 @@
       "obs"
       "steam"
       "visual-studio-code"
-      "discord" 
+      "discord"
+      "google-chrome" 
     ];
   };
 }
